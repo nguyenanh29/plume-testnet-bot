@@ -133,21 +133,6 @@ async function claimFaucet(wallet, token, salt, signature) {
       `[${moment().format('HH:mm:ss')}] Retrying in 10 seconds...`.yellow
     );
     await delay(10000);
- new CronJob(
-      cronSchedule,
-      () => {
-        execSync(cronCommand, { stdio: 'inherit' });
-      },
-      null,
-      true,
-      timeZone
-    );
 
-    console.log(
-      `[${moment().format(
-        'HH:mm:ss'
-      )}] Cron job scheduled to run every 2 hours (Asia/Jakarta).`
-        .yellow
-    );
   }
 })();
