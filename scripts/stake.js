@@ -29,7 +29,7 @@ async function doStake(privateKey) {
       );
 
       const goonContract = new Contract(GOON_CA, ERC20_ABI, wallet);
-      await goonContract.approve(CA, parseEther('1'));
+      await goonContract.approve(CA, parseEther('100'));
 
       const data = implementationContract.interface.encodeFunctionData(
         'stake',
